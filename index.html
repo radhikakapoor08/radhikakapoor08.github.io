@@ -1,117 +1,158 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radhika Kapoor | Portfolio</title>
+    <title>Radhika Kapoor | Personal Website</title>
     <style>
-        :root { --primary: #0076ff; --text: #222; --bg: #f8f9fa; --card-bg: #ffffff; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); line-width: 1.6; max-width: 1050px; margin: 0 auto; padding: 40px 20px; background-color: var(--bg); }
+        /* Exact Design Framework & Typography inspired by Maya's Portfolio Setup */
+        :root {
+            --primary: #0076ff;
+            --dark: #1a1a1a;
+            --text-muted: #6c757d;
+            --bg-light: #f9f9f9;
+            --border-color: #efefef;
+        }
+        body { font-family: "Hind", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #454545; line-height: 1.8; margin: 0; padding: 0; background-color: #ffffff; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         
-        /* Hero Section Mirroring Maya's Site */
-        .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px 0; border-bottom: 2px solid #e1e4e8; align-items: center; }
-        @media (max-width: 768px) { .hero { grid-template-columns: 1fr; gap: 20px; } }
-        .hero-left h1 { font-size: 3rem; margin: 0; font-weight: 800; color: #111; }
-        .hero-left h3 { font-size: 1.3rem; color: #666; font-weight: 400; margin: 10px 0 20px 0; }
-        .bio-text { font-size: 1.05rem; color: #444; margin-bottom: 25px; }
+        /* Hero Section */
+        #hero { padding: 90px 0 60px 0; background: var(--bg-light); border-bottom: 1px solid var(--border-color); }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        @media (max-width: 768px) { .hero-grid { grid-template-columns: 1fr; } }
+        .hero-text h1 { font-size: 2.8rem; font-weight: 700; color: var(--dark); margin: 0 0 10px 0; }
+        .hero-text h3 { font-size: 1.3rem; color: var(--primary); font-weight: 500; margin: 0 0 30px 0; }
+        .discover-btn { display: inline-block; background: var(--primary); color: #fff; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 10px rgba(0,118,255,0.2); }
         
-        .profile-fact-box { background: var(--card-bg); border: 1px solid #e1e4e8; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-        .fact-item { margin-bottom: 12px; font-size: 1rem; border-bottom: 1px dashed #eee; padding-bottom: 8px; }
-        .fact-item:last-child { border: none; margin: 0; padding: 0; }
-        .fact-item strong { color: var(--primary); width: 110px; display: inline-block; }
+        .profile-list { list-style: none; padding: 0; margin: 0; }
+        .profile-list li { font-size: 1.05rem; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+        .profile-list strong { color: var(--dark); display: inline-block; width: 120px; }
 
-        /* Unified Navigation Bar */
-        nav { display: flex; gap: 30px; margin: 30px 0; padding-bottom: 10px; border-bottom: 1px solid #e1e4e8; }
-        nav a { text-decoration: none; color: #555; font-weight: 500; font-size: 1.1rem; transition: color 0.2s; }
-        nav a:hover, nav a.active { color: var(--primary); font-weight: 600; }
+        /* Navigation Menu bar */
+        .navbar { background: #fff; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
+        .nav-links { display: flex; justify-content: center; gap: 40px; list-style: none; padding: 0; margin: 0; }
+        .nav-links a { text-decoration: none; color: #555; font-weight: 600; font-size: 1.05rem; }
+        .nav-links a:hover { color: var(--primary); }
 
-        /* Section Styling */
-        section { padding: 40px 0; }
-        h2 { font-size: 2rem; font-weight: 700; color: #111; margin-bottom: 30px; position: relative; }
-        h2::after { content: ''; display: block; width: 50px; height: 4px; background: var(--primary); margin-top: 8px; border-radius: 2px; }
+        /* Standard Section Headers */
+        section { padding: 80px 0; border-bottom: 1px solid var(--border-color); }
+        .section-title { font-size: 2.2rem; font-weight: 700; color: var(--dark); text-align: center; margin-bottom: 50px; }
+        
+        /* Intro Paragraph */
+        .intro-para { font-size: 1.15rem; color: #555; max-width: 850px; margin: 0 auto 40px auto; text-align: center; }
+        .resume-btn-holder { text-align: center; margin-bottom: 40px; }
+        
+        /* Resume Lists & Items Layout */
+        .resume-block { margin-bottom: 40px; padding-left: 20px; border-left: 2px solid var(--border-color); }
+        .resume-block:hover { border-left-color: var(--primary); }
+        .resume-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px; }
+        @media (max-width: 600px) { .resume-header { flex-direction: column; } }
+        .resume-title { font-size: 1.35rem; font-weight: 700; color: var(--dark); margin: 0; }
+        .resume-sub { font-size: 1.1rem; color: var(--primary); font-weight: 600; margin: 3px 0; }
+        .resume-date { font-size: 0.95rem; color: var(--text-muted); font-style: italic; }
+        .resume-body { padding-left: 20px; margin-top: 10px; }
+        .resume-body li { margin-bottom: 8px; }
 
-        /* Timeline / Experience Layout */
-        .timeline-item { background: var(--card-bg); border-left: 4px solid var(--primary); border-top: 1px solid #e1e4e8; border-right: 1px solid #e1e4e8; border-bottom: 1px solid #e1e4e8; border-radius: 0 6px 6px 0; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.01); }
-        .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-        @media (max-width: 600px) { .timeline-header { flex-direction: column; gap: 5px; } }
-        .timeline-title { font-size: 1.3rem; font-weight: 700; margin: 0; color: #111; }
-        .timeline-org { font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-top: 2px; }
-        .timeline-date { font-size: 0.9rem; color: #666; font-weight: 500; background: #e1e4e8; padding: 4px 12px; border-radius: 12px; }
-        .timeline-body { margin-top: 15px; padding-left: 15px; }
-        .timeline-body li { margin-bottom: 8px; color: #444; }
+        /* Project Grid Matrix Layout */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 20px; }
+        .project-card { background: var(--bg-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s; }
+        .project-card:hover { transform: translateY(-5px); background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .project-card h4 { font-size: 1.3rem; font-weight: 700; color: var(--dark); margin: 0 0 15px 0; }
+        .tech-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+        .badge { background: #e1f0ff; color: var(--primary); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 4px; text-transform: uppercase; }
 
-        .btn { display: inline-block; background: var(--primary); color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 1rem; font-weight: 500; transition: background 0.2s; }
-        .btn:hover { background: #0056b3; }
+        /* Extracurricular Cards layout style */
+        .extra-item { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 50px; background: var(--bg-light); border: 1px solid var(--border-color); padding: 30px; border-radius: 8px; }
+        .extra-title { font-size: 1.4rem; font-weight: 700; color: var(--dark); margin: 0 0 10px 0; }
+
+        /* Contact Forms */
+        .contact-form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+        .form-group label { font-weight: 600; color: var(--dark); }
+        .form-group input, .form-group textarea { padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 1rem; background: var(--bg-light); }
+        .submit-btn { background: var(--dark); color: #fff; padding: 14px; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .submit-btn:hover { background: var(--primary); }
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-muted); }
     </style>
 </head>
 <body>
 
-    <!-- HERO / ABOUT ROW -->
-    <div class="hero">
-        <div class="hero-left">
-            <h1>Hello, I am Radhika!</h1>
-            <h3>Student, Data Science Researcher & Writer</h3>
-            <p class="bio-text">
-                I am a high school student targeting computer science and data analytics paradigms. I explore the structural intersections of automated time-series forecasting, algorithmic modeling reliability, and human-centered design configurations. When I am not optimizing data matrices, I write psychological suspense structures and arrange modern acoustic frameworks.
-            </p>
-            <a href="projects.html" class="btn">Discover My Work</a>
-        </div>
-        
-        <div class="hero-right">
-            <div class="profile-fact-box">
-                <div class="fact-item"><strong>Name:</strong> Radhika Kapoor</div>
-                <div class="fact-item"><strong>Location:</strong> Chennai, India</div>
-                <div class="fact-item"><strong>Education:</strong> Sishya School (ISC Board)</div>
-                <div class="fact-item"><strong>Core Tech:</strong> SQL, Python, Tableau, Java</div>
-                <div class="fact-item"><strong>Interests:</strong> AI Modeling, Fiction Writing, Guitar</div>
+    <!-- HERO HEADER COMPONENT -->
+    <div id="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Hello, I am Radhika!</h1>
+                <h3>Student, Data Scientist, and Creative Thinker</h3>
+                <p style="font-size: 1.1rem; color: #555; margin-bottom: 30px;">
+                    Welcome to my space. I am an academic and technology researcher charting paths in predictive modeling, analytics workflows, and creative narrative communication structures.
+                </p>
+                <a href="#education" class="discover-btn">Discover more</a>
+            </div>
+            <div>
+                <ul class="profile-list">
+                    <li><strong>Name:</strong> Radhika Kapoor</li>
+                    <li><strong>School:</strong> Sishya School (ISC)</li>
+                    <li><strong>Board Focus:</strong> Physics, Chemistry, Math, AI</li>
+                    <li><strong>Standardized:</strong> SAT: 1430 | AP CSA: 5</li>
+                    <li><strong>Hometown:</strong> Chennai, India</li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <!-- MAIN INTERFACE NAVIGATION -->
-    <nav>
-        <a href="index.html" class="active">Home Overview</a>
-        <a href="projects.html">Research & Tech</a>
-        <a href="writing.html">Publications</a>
-        <a href="creative.html">Creative Outlets</a>
-    </nav>
-
-    <!-- TIMELINE EDUCATION / EXPERIENCE -->
-    <section>
-        <h2>My Experience & Education</h2>
-
-        <!-- EXP 1: ZEPTO -->
-        <div class="timeline-item">
-            <div class="timeline-header">
-                <div>
-                    <div class="timeline-title">Business Analytics Engineering Intern</div>
-                    <div class="timeline-org">Zepto (High-Velocity Retail Infrastructure)</div>
-                </div>
-                <div class="timeline-date">Apr 2026 - May 2026</div>
-            </div>
-            <ul class="timeline-body">
-                <li>Engineered an automated SKU-level demand forecasting model for the fresh meat category sector utilizing historical logistics traces.</li>
-                <li>Implemented custom weighted same-weekday forecasting loops alongside statistical outlier removal algorithms using SQL architecture.</li>
-                <li>Boosted corporate predictive operational accuracy metrics significantly from 41.9% to 64.1%, cutting baseline error variations down to 10.2%.</li>
+    <!-- MAIN NAV LINKS -->
+    <div class="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#extracurriculars">Extracurriculars</a>
+                <a href="#contact">Contact</a>
             </ul>
         </div>
+    </div>
 
-        <!-- EXP 2: SISHYA -->
-        <div class="timeline-item">
-            <div class="timeline-header">
-                <div>
-                    <div class="timeline-title">High School Curriculum Foundation</div>
-                    <div class="timeline-org">Sishya School (ICSE School Topper)</div>
-                </div>
-                <div class="timeline-date">Graduating 2027</div>
+    <!-- ABOUT SUMMARY SECTION -->
+    <section id="about">
+        <div class="container">
+            <p class="intro-para">
+                I am a high school student in the class of 2027 pursuing advanced tracks in Computer Science, Applied Mathematics, and Artificial Intelligence. I have been studying development architectures throughout high school and am highly comfortable working in SQL, Python, Java, and Tableau configurations. Outside of class structures, I lead corporate-scale data analytics tracking projects, conduct machine learning research, write published fiction thrillers, and perform as a lead electric guitarist.
+            </p>
+            <div class="resume-btn-holder">
+                <a href="#" class="discover-btn" style="background: var(--dark);">Download Resume</a>
             </div>
-            <ul class="timeline-body">
-                <li>Achieved absolute institutional top-rank status (2025) with specialized perfect marks (100) recorded in Computer Science applications.</li>
-                <li>Awarded the M. Venkataraman Prize for top academic performance alongside successive Green Card citations since Grade 4.</li>
-                <li>Advanced tracks completed across AP Computer Science A (Score: 5) alongside multi-week data frameworks certification at IIT Madras.</li>
-            </ul>
         </div>
     </section>
 
-</body>
-</html>
+    <!-- EDUCATION LOG SECTIONS -->
+    <section id="education">
+        <div class="container">
+            <div class="section-title">My Education</div>
+
+            <div class="resume-block">
+                <div class="resume-header">
+                    <h4 class="resume-title">Sishya School</h4>
+                    <span class="resume-date">High School Degree | 2015 - Present (Class of 2027)</span>
+                </div>
+                <div class="resume-sub">ICSE School Topper & ISC Candidate</div>
+                <p><strong>Awards:</strong> M. Venkataraman Prize (School Topper 2025), Dr. Kaushik Prize (Hindi), Nakul Chatterjee Prize (Social Studies), M.G. Doss Prize (Computer Applications). Consecutively awarded Green Cards for academic excellence since Grade 4.</p>
+                <p><strong>Key Metrics:</strong> Computer Science: 100/100 | History: 100/100 | Geography: 99/100 | Physics: 98/100 | Biology: 98/100 | Mathematics: 95/100.</p>
+            </div>
+
+            <div class="resume-block">
+                <div class="resume-header">
+                    <h4 class="resume-title">Advanced External Certifications</h4>
+                    <span class="resume-date">2023 - 2026</span>
+                </div>
+                <div class="resume-sub">Data Science Scholar & AI Specializations</div>
+                <p><strong>Credentials:</strong> IIT Madras Introduction to Data Science & AI Certification (8-Week Track), Scrimba AI Engineering Certification (2026).</p>
+                <p><strong>Coursera Frameworks:</strong> Yale University Financial Markets, IBM Introduction to AI, Google Intro to AI, AWS Fundamentals of AI & ML, Python Core & Java Architectures.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE CHRONOLOGY SECTIONS -->
+    <section id="experience">
+

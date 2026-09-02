@@ -1,90 +1,115 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radhika Kapoor | Portfolio</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #fcfcfc; }
-        header { text-align: center; padding: 40px 0; border-bottom: 2px solid #eaeaea; }
-        h1 { margin: 0; color: #111; font-size: 2.5rem; }
-        .subtitle { color: #666; font-size: 1.1rem; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        section { padding: 40px 0; border-bottom: 1px solid #eaeaea; }
-        h2 { color: #0076ff; border-left: 4px solid #0076ff; padding-left: 10px; margin-bottom: 20px; }
-        .project-card { background: #fff; border: 1px solid #e1e4e8; border-radius: 6px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .project-title { font-size: 1.3rem; font-weight: bold; margin: 0 0 10px 0; color: #222; }
-        .tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
-        .tag { background: #f1f8ff; color: #0366d6; font-size: 0.8rem; padding: 3px 10px; border-radius: 12px; font-weight: 500; }
-        .embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; margin-top: 15px; border-radius: 4px; }
-        .embed-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .btn { display: inline-block; background: #0076ff; color: #fff; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-top: 10px; }
+        :root { --primary: #0076ff; --text: #222; --bg: #f8f9fa; --card-bg: #ffffff; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); line-width: 1.6; max-width: 1050px; margin: 0 auto; padding: 40px 20px; background-color: var(--bg); }
+        
+        /* Hero Section Mirroring Maya's Site */
+        .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px 0; border-bottom: 2px solid #e1e4e8; align-items: center; }
+        @media (max-width: 768px) { .hero { grid-template-columns: 1fr; gap: 20px; } }
+        .hero-left h1 { font-size: 3rem; margin: 0; font-weight: 800; color: #111; }
+        .hero-left h3 { font-size: 1.3rem; color: #666; font-weight: 400; margin: 10px 0 20px 0; }
+        .bio-text { font-size: 1.05rem; color: #444; margin-bottom: 25px; }
+        
+        .profile-fact-box { background: var(--card-bg); border: 1px solid #e1e4e8; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .fact-item { margin-bottom: 12px; font-size: 1rem; border-bottom: 1px dashed #eee; padding-bottom: 8px; }
+        .fact-item:last-child { border: none; margin: 0; padding: 0; }
+        .fact-item strong { color: var(--primary); width: 110px; display: inline-block; }
+
+        /* Unified Navigation Bar */
+        nav { display: flex; gap: 30px; margin: 30px 0; padding-bottom: 10px; border-bottom: 1px solid #e1e4e8; }
+        nav a { text-decoration: none; color: #555; font-weight: 500; font-size: 1.1rem; transition: color 0.2s; }
+        nav a:hover, nav a.active { color: var(--primary); font-weight: 600; }
+
+        /* Section Styling */
+        section { padding: 40px 0; }
+        h2 { font-size: 2rem; font-weight: 700; color: #111; margin-bottom: 30px; position: relative; }
+        h2::after { content: ''; display: block; width: 50px; height: 4px; background: var(--primary); margin-top: 8px; border-radius: 2px; }
+
+        /* Timeline / Experience Layout */
+        .timeline-item { background: var(--card-bg); border-left: 4px solid var(--primary); border-top: 1px solid #e1e4e8; border-right: 1px solid #e1e4e8; border-bottom: 1px solid #e1e4e8; border-radius: 0 6px 6px 0; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.01); }
+        .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        @media (max-width: 600px) { .timeline-header { flex-direction: column; gap: 5px; } }
+        .timeline-title { font-size: 1.3rem; font-weight: 700; margin: 0; color: #111; }
+        .timeline-org { font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-top: 2px; }
+        .timeline-date { font-size: 0.9rem; color: #666; font-weight: 500; background: #e1e4e8; padding: 4px 12px; border-radius: 12px; }
+        .timeline-body { margin-top: 15px; padding-left: 15px; }
+        .timeline-body li { margin-bottom: 8px; color: #444; }
+
+        .btn { display: inline-block; background: var(--primary); color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 1rem; font-weight: 500; transition: background 0.2s; }
         .btn:hover { background: #0056b3; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Radhika Kapoor</h1>
-        <p class="subtitle">Data Science Researcher & Creative Writer<br>Exploring predictive modeling, human-centered UI/UX, and data storytelling.</p>
-    </header>
-<nav style="margin-top: 20px; display: flex; justify-content: center; gap: 25px;">
-    <a href="index.html" style="text-decoration: none; color: #0076ff; font-weight: 600; border-bottom: 2px solid #0076ff; padding-bottom:4px;">Home</a>
-    <a href="projects.html" style="text-decoration: none; color: #666; font-weight: 500;">Projects</a>
-    <a href="writing.html" style="text-decoration: none; color: #666; font-weight: 500;">Writing</a>
-    <a href="creative.html" style="text-decoration: none; color: #666; font-weight: 500;">Creative</a>
-</nav>
-
-    <!-- TECH SECTION -->
-    <section>
-        <h2>📊 Tech & Data Science Projects</h2>
+    <!-- HERO / ABOUT ROW -->
+    <div class="hero">
+        <div class="hero-left">
+            <h1>Hello, I am Radhika!</h1>
+            <h3>Student, Data Science Researcher & Writer</h3>
+            <p class="bio-text">
+                I am a high school student targeting computer science and data analytics paradigms. I explore the structural intersections of automated time-series forecasting, algorithmic modeling reliability, and human-centered design configurations. When I am not optimizing data matrices, I write psychological suspense structures and arrange modern acoustic frameworks.
+            </p>
+            <a href="projects.html" class="btn">Discover My Work</a>
+        </div>
         
-        <div class="project-card">
-            <div class="project-title">SKU Demand Forecasting — Zepto Internship</div>
-            <p>Optimized time-series forecasting for grocery supply chain infrastructure. Implemented statistical outlier filtering and weighted same-day fallback logic using SQL and predictive analytics tools.</p>
-            <div class="tags">
-                <span class="tag">SQL</span>
-                <span class="tag">Demand Planning</span>
-                <span class="tag">Time-Series Analytics</span>
+        <div class="hero-right">
+            <div class="profile-fact-box">
+                <div class="fact-item"><strong>Name:</strong> Radhika Kapoor</div>
+                <div class="fact-item"><strong>Location:</strong> Chennai, India</div>
+                <div class="fact-item"><strong>Education:</strong> Sishya School (ISC Board)</div>
+                <div class="fact-item"><strong>Core Tech:</strong> SQL, Python, Tableau, Java</div>
+                <div class="fact-item"><strong>Interests:</strong> AI Modeling, Fiction Writing, Guitar</div>
             </div>
-            <p><strong>Impact:</strong> Improved accuracy from 41.9% to 64.1% while slashing modeling errors to 10.2%.</p>
         </div>
+    </div>
 
-        <div class="project-card">
-            <div class="project-title">JobCompass — Data Science Scholar Platform</div>
-            <p>Developed an interactive data framework navigating technology career matching patterns for historically underrepresented student groups.</p>
-            <div class="tags">
-                <span class="tag">Tableau</span>
-                <span class="tag">Data Analysis</span>
-                <span class="tag">User-Centered Design</span>
-            </div>
-            
-            <!-- TABLEAU PLACEHOLDER -->
-            <p style="color: #666; font-style: italic; margin-top:15px;">PASTE YOUR TABLEAU EMBED SNIPPET DIRECTLY HERE TO DISPLAY THE DASHBOARD LIVE</p>
-        </div>
-    </section>
+    <!-- MAIN INTERFACE NAVIGATION -->
+    <nav>
+        <a href="index.html" class="active">Home Overview</a>
+        <a href="projects.html">Research & Tech</a>
+        <a href="writing.html">Publications</a>
+        <a href="creative.html">Creative Outlets</a>
+    </nav>
 
-    <!-- WRITING SECTION -->
+    <!-- TIMELINE EDUCATION / EXPERIENCE -->
     <section>
-        <h2>✍️ Published Literary Works</h2>
-        <div class="project-card">
-            <div class="project-title">"DECIEVED" — Bestselling Fiction Novel</div>
-            <p>Published a psychological horror novel under BriBooks. Recognized as the 1st place award recipient across the Chennai Bestseller League platform infrastructure.</p>
-            <a href="#" class="btn">View Book Profile</a>
-        </div>
-    </section>
+        <h2>My Experience & Education</h2>
 
-    <!-- GUITAR SECTION -->
-    <section>
-        <h2>🎸 Creative Expressions</h2>
-        <div class="project-card">
-            <div class="project-title">Electric Guitar Covers & Live Ensembles</div>
-            <p>Lead electric guitarist for the institutional band cohort performing at regional events. Certified Grade 1 with Distinction by Trinity College London.</p>
-            
-            <!-- YOUTUBE VIDEO EMBED -->
-            <div class="embed-container">
-                <!-- Replace video id 'dQw4w9WgXcQ' with your actual YouTube video link characters later -->
-                <iframe src="https://youtube.com" allowfullscreen></iframe>
+        <!-- EXP 1: ZEPTO -->
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <div>
+                    <div class="timeline-title">Business Analytics Engineering Intern</div>
+                    <div class="timeline-org">Zepto (High-Velocity Retail Infrastructure)</div>
+                </div>
+                <div class="timeline-date">Apr 2026 - May 2026</div>
             </div>
+            <ul class="timeline-body">
+                <li>Engineered an automated SKU-level demand forecasting model for the fresh meat category sector utilizing historical logistics traces.</li>
+                <li>Implemented custom weighted same-weekday forecasting loops alongside statistical outlier removal algorithms using SQL architecture.</li>
+                <li>Boosted corporate predictive operational accuracy metrics significantly from 41.9% to 64.1%, cutting baseline error variations down to 10.2%.</li>
+            </ul>
+        </div>
+
+        <!-- EXP 2: SISHYA -->
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <div>
+                    <div class="timeline-title">High School Curriculum Foundation</div>
+                    <div class="timeline-org">Sishya School (ICSE School Topper)</div>
+                </div>
+                <div class="timeline-date">Graduating 2027</div>
+            </div>
+            <ul class="timeline-body">
+                <li>Achieved absolute institutional top-rank status (2025) with specialized perfect marks (100) recorded in Computer Science applications.</li>
+                <li>Awarded the M. Venkataraman Prize for top academic performance alongside successive Green Card citations since Grade 4.</li>
+                <li>Advanced tracks completed across AP Computer Science A (Score: 5) alongside multi-week data frameworks certification at IIT Madras.</li>
+            </ul>
         </div>
     </section>
 

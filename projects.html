@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Projects | Radhika Kapoor</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #fcfcfc; }
+        header { text-align: center; padding: 30px 0; border-bottom: 2px solid #eaeaea; }
+        nav { margin-top: 20px; display: flex; justify-content: center; gap: 25px; }
+        nav a { text-decoration: none; color: #666; font-weight: 500; }
+        nav a.active { color: #0076ff; font-weight: 600; border-bottom: 2px solid #0076ff; padding-bottom: 4px; }
+        section { padding: 30px 0; }
+        h2 { color: #111; font-size: 1.8rem; margin-bottom: 20px; }
+        .project-card { background: #fff; border: 1px solid #e1e4e8; border-radius: 6px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .project-title { font-size: 1.4rem; font-weight: bold; margin: 0 0 10px 0; color: #222; }
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+        .tag { background: #f1f8ff; color: #0366d6; font-size: 0.8rem; padding: 3px 10px; border-radius: 12px; font-weight: 500; }
+        .tableau-container { margin-top: 20px; width: 100%; min-height: 600px; background: #f4f4f4; border-radius: 6px; border: 1px solid #e1e4e8; overflow: hidden; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Technical Portfolio</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="writing.html">Writing</a>
+            <a href="creative.html">Creative</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>📊 Engineering & Data Science</h2>
+
+        <!-- PROJECT 1: ZEPTO -->
+        <div class="project-card">
+            <div class="project-title">SKU Demand Forecasting — Zepto Internship</div>
+            <p>Worked on a high-velocity forecasting engine using SQL. Designed time-series models handling intermittent demand patterns, regional volatility, and outlier detection logic to stabilize inventory buffers.</p>
+            <div class="tags">
+                <span class="tag">SQL</span>
+                <span class="tag">Data Analytics</span>
+                <span class="tag">Supply Chain Logics</span>
+            </div>
+            <p><strong>Metrics:</strong> Boosted forecasting accuracy from 41.9% to 64.1% while maintaining an average error deviation rate under 10.2%.</p>
+        </div>
+
+        <!-- PROJECT 2: JOBCOMPASS -->
+        <div class="project-card">
+            <div class="project-title">JobCompass — Data Science Scholar Platform</div>
+            <p>An interactive, data-driven visualization platform mapping technology career pathways based on user profiles, helping students identify structural skill alignment routes efficiently.</p>
+            <div class="tags">
+                <span class="tag">Tableau Public</span>
+                <span class="tag">UI/UX Layout</span>
+                <span class="tag">Dataset Optimization</span>
+            </div>
+            
+            <!-- LIVE TABLEAU INTERACTION WINDOW -->
+            <div class="tableau-container">
+                <!-- ⬇️ PASTE YOUR TABLEAU EMBED EMBED CODE SnipET DIRECTLY BELOW THIS LINE ⬇️ -->
+                
+                <p style="text-align: center; padding-top: 100px; color: #999;">[<div class='tableauPlaceholder' id='viz1788325608309' style='position: relative'><noscript><a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Jo&#47;JobCompass&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='JobCompass&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Jo&#47;JobCompass&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1788325608309');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1300px';vizElement.style.height='2427px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>]</p>
+
+                <!-- ⬆️ PASTE YOUR TABLEAU EMBED CODE SNIPPET DIRECTLY ABOVE THIS LINE ⬆️ -->
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
